@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Semafor</title>
+	<style>
+		#semafor{
+			width: 60px;
+			height: 200px;
+			border: 1px solid silver;
+			border-radius: 15px;
+			margin-left: 350px;
+		}
+		.boje{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: 1px solid silver;
+			margin: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div id="semafor">
+		<div class="boje"></div>
+		<div class="boje"></div>
+		<div class="boje"></div>
+	</div>
+	<script >
+		function start(){
+		var boje=document.getElementsByClassName('boje');			
+		boje[0].style.background='red';
+		boje[1].style.background='grey';
+		boje[2].style.background='grey';
+
+		function changeToYellow(){
+			boje[1].style.background='yellow';
+		}
+		function changeToGreen(){
+			boje[0].style.background='grey';
+			boje[1].style.background='grey';
+			boje[2].style.background='green';
+		}
+		function greenToGrey(){
+			boje[0].style.background='grey';
+			boje[1].style.background='grey';
+			boje[2].style.background='grey';
+		}
+		function greyToGreen(){
+			boje[0].style.background='grey';
+			boje[1].style.background='grey';
+			boje[2].style.background='green';
+		}
+		
+		setTimeout(changeToYellow,5000);
+		setTimeout(changeToGreen,6500)
+		setTimeout(greenToGrey,10000);
+		setTimeout(greyToGreen,10500);
+		setTimeout(greenToGrey,11000);
+		setTimeout(greyToGreen,11500);
+		setTimeout(greenToGrey,12000);
+		setTimeout(greyToGreen,12500);
+		setTimeout(greenToGrey,13000);
+
+		
+		setInterval(start,13200);
+		}
+		start();
+	</script>
+</body>
+</html>
